@@ -9,7 +9,24 @@ section{padding:95px 0}.kick{color:#ff9e32}.about{display:grid;grid-template-col
 .lines{border-top:1px solid #ffffff17}.line{display:grid;grid-template-columns:65px 1fr;gap:18px;padding:23px 4px;border-bottom:1px solid #ffffff14}.line b{font:900 8px monospace;color:#ff9e32}.line strong{font-size:12px}
 .vibe{background:var(--m);color:#18130f}.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.vc{padding:24px;border:3px solid #18130f;background:var(--c);box-shadow:7px 7px 0 #18130f;min-height:220px}.vc i{font-style:normal;font-size:35px}.vc h3{margin-top:32px}.vc p{font-size:10px;line-height:1.8;color:#63584c}.final{background:var(--r);color:#18130f;text-align:center}.final h2{font-size:clamp(60px,11vw,130px);line-height:.8;letter-spacing:-.09em;margin:0;text-shadow:5px 5px 0 var(--c)}.final h2 span{display:block;font-size:.34em;margin-bottom:18px;text-shadow:none}.final p{font-size:12px;line-height:2;font-weight:700}.tag{display:inline-block;padding:11px 15px;background:var(--y);border:3px solid #18130f;font:900 9px monospace}footer{text-align:center;padding:28px;color:#776b5d;font:900 8px monospace}.reveal{opacity:0;transform:translateY(25px);transition:.8s}.reveal.on{opacity:1;transform:none}
 @media(max-width:780px){.about,.qg{grid-template-columns:1fr}.grid,.vgrid{grid-template-columns:1fr}.hero:before{font-size:80vw}.bag{max-width:290px}}@media(max-width:480px){.counter{flex-direction:column}.day{min-height:90px}}
-</style></head><body class="lock"><div id="intro"><div class="pack"></div><div class="ib"><small>TALESRUNNER GUILD · SNACK RAIDERS</small><h1><span>오늘도 누군가의 간식은 사라진다</span>간식<br>약탈단</h1><p>거창한 건 없습니다.<br>같이 놀고, 길퀘하고, 선만 안 넘으면 됩니다.</p><button class="enter" id="enter">🍪 약탈 작전 참가하기 →</button></div></div><nav><b>간식<span>약탈단</span></b><i>LOOT SNACKS · KEEP THE VIBE</i></nav>
+
+.entryChoices{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.enter.quiet{background:#18130f;color:#fff4d7;box-shadow:6px 6px 0 #8169e8}
+.musicPlayer{position:fixed;right:15px;bottom:15px;z-index:75;width:min(420px,calc(100% - 30px));display:grid;grid-template-columns:48px 1fr auto;gap:11px;align-items:center;padding:12px;border:3px solid #18130f;background:#fff4d7;color:#18130f;box-shadow:7px 7px 0 #ff5b4d;transform:rotate(-.5deg)}
+.musicPlayer button{width:48px;height:48px;border:3px solid #18130f;background:#ffd84b;font-weight:900;cursor:pointer}
+.musicPlayer small{display:block;font:900 7px monospace;letter-spacing:.12em;color:#8b342d}.musicPlayer strong{font-size:11px}
+.musicPlayer .progress{height:4px;margin-top:8px;background:#18130f22}.musicPlayer .progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff5b4d,#8169e8)}
+.musicPlayer .volume{display:flex;align-items:center;gap:5px}.musicPlayer input{width:70px;accent-color:#ff5b4d}.musicPlayer .volume span{font:900 7px monospace}
+body.musicOn .pack{animation:snackBeat .55s ease-in-out infinite alternate}
+body.musicOn .label{animation:labelBeat .7s ease-in-out infinite alternate}
+@keyframes snackBeat{to{transform:rotate(-5deg) scale(1.018)}}@keyframes labelBeat{to{transform:rotate(2deg) translateY(-3px)}}
+#intro.pop:after{content:"CATCH!";position:absolute;z-index:4;font-size:min(27vw,300px);font-weight:900;color:#fff4d7;-webkit-text-stroke:5px #18130f;text-shadow:12px 12px 0 #8169e8;animation:catchPop .8s forwards;pointer-events:none}
+@keyframes catchPop{0%{opacity:0;transform:scale(.2) rotate(-15deg)}40%{opacity:1;transform:scale(1.08) rotate(4deg)}100%{opacity:0;transform:scale(1.5) rotate(-2deg)}}
+@media(max-width:520px){.entryChoices{flex-direction:column}.musicPlayer{right:8px;bottom:8px;width:calc(100% - 16px);grid-template-columns:44px 1fr}.musicPlayer .volume{grid-column:2}.musicPlayer input{width:100%}}
+</style></head><body class="lock"><div id="intro"><div class="pack"></div><div class="ib"><small>TALESRUNNER GUILD · SNACK RAIDERS</small><h1><span>오늘도 누군가의 간식은 사라진다</span>간식<br>약탈단</h1><p>거창한 건 없습니다.<br>같이 놀고, 길퀘하고, 선만 안 넘으면 됩니다.</p><div class="entryChoices">
+    <button class="enter" id="enter">🎵 음악과 함께 약탈 시작 →</button>
+    <button class="enter quiet" id="quiet">🔇 조용히 잠입하기</button>
+    </div></div></div><nav><b>간식<span>약탈단</span></b><i>LOOT SNACKS · KEEP THE VIBE</i></nav>
 <header class="hero"><div class="wrap hc"><div class="label">🍿 RECRUITING · SNACK RAIDERS</div><h2>간식은 털어도,<br><span>분위기는 털지 말자.</span></h2><p class="lead">이름은 살벌하지만 운영은 심플합니다. <b>각자 할 일은 각자 해결하고, 서로 불편하게 만들지 않으며, 같이 할 땐 재밌게.</b> 복잡한 규칙보다 기본적인 선과 참여를 중요하게 생각합니다.</p><div class="chips"><i>SELF SOLVE</i><i>NO N-MISAE</i><i>QUEST 2–3 / WEEK</i><i>GOOD VIBE ONLY</i></div></div></header><div class="ticker">SNACK RAIDERS /// 간식은 약탈 가능 /// 사람 멘탈은 약탈 금지 /// 길퀘 주 2–3회 /// 시비는 본인 선에서 해결 ///</div>
 <section><div class="wrap about reveal"><div class="bag"><b>LOOT<br>CREW<small>간식약탈단 행동강령</small></b></div><div class="copy"><div class="kick">01 / WHO WE ARE</div><div class="title">복잡한 건 됐고,<span>재밌게 오래.</span></div><p><strong>간식약탈단</strong>은 장난스럽고 편한 분위기를 지향합니다. 각자 편하게 놀다가 자연스럽게 같이 게임하고 웃을 수 있는 길드를 목표로 합니다.</p><p>자유로운 분위기일수록 <strong>기본적인 매너와 서로의 선</strong>은 더 중요합니다.</p></div></div></section>
 <section class="rules"><div class="wrap reveal"><div class="kick">02 / RAIDERS CODE</div><div class="title">약탈단의<span>최소 행동강령.</span></div><div class="grid">
@@ -32,4 +49,35 @@ section{padding:95px 0}.kick{color:#ff9e32}.about{display:grid;grid-template-col
 <div class="vc" style="background:#ff5b4d"><i>👑</i><h3>길드마스터 · 둥봄</h3><p style="color:#321914">간식약탈단의 길드마스터. 약탈 작전 총책임자.</p></div>
 <div class="vc"><i>🍪</i><h3>서브마스터 · 도다영</h3><p>길드 운영을 함께 맡는 간식약탈단 서브마스터.</p></div>
 <div class="vc"><i>🍫</i><h3>서브마스터 · 단삼</h3><p>길드 운영을 함께 맡는 간식약탈단 서브마스터.</p></div>
-</div></div></section><section class="final"><div class="wrap reveal"><h2><span>MISSION COMPLETE?</span>간식<br>약탈단</h2><p>빡센 규칙집보다 같이 놀 사람을 찾습니다.<br>간식은 마음껏 털어도 되지만 <b>사람 기분과 길드 분위기는 털지 마세요.</b></p><div class="tag">🍫 NEXT TARGET · 새로운 길드원</div></div></section><footer>SNACK RAIDERS · TALESRUNNER GUILD / LOOT SNACKS · KEEP THE VIBE</footer><script>const i=document.getElementById("intro");function go(){document.body.classList.remove("lock");i.classList.add("out");setTimeout(()=>i.remove(),1000)}enter.onclick=go;addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&document.body.classList.contains("lock"))go()});const o=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.08});document.querySelectorAll(".reveal").forEach(x=>o.observe(x));</script></body></html>
+</div></div></section><section class="final"><div class="wrap reveal"><h2><span>MISSION COMPLETE?</span>간식<br>약탈단</h2><p>빡센 규칙집보다 같이 놀 사람을 찾습니다.<br>간식은 마음껏 털어도 되지만 <b>사람 기분과 길드 분위기는 털지 마세요.</b></p><div class="tag">🍫 NEXT TARGET · 새로운 길드원</div></div></section><div class="musicPlayer">
+<button id="play">▶</button>
+<div><small>SNACK RAIDERS · NOW PLAYING</small><strong>YENA — 캐치 캐치</strong><div class="progress"><i id="prog"></i></div></div>
+<div class="volume"><span id="vt">8%</span><input id="volume" type="range" min="0" max="100" value="8"></div>
+</div>
+<audio id="bgm" preload="auto" loop><source src="assets/catch-catch.mp3" type="audio/mpeg"></audio><footer>SNACK RAIDERS · TALESRUNNER GUILD / LOOT SNACKS · KEEP THE VIBE</footer><script>
+const intro=document.getElementById("intro"),bgm=document.getElementById("bgm"),play=document.getElementById("play"),
+volume=document.getElementById("volume"),vt=document.getElementById("vt"),prog=document.getElementById("prog");
+let target=.08,fade;
+function gate(){
+  intro.classList.add("pop");
+  setTimeout(()=>{document.body.classList.remove("lock");intro.classList.add("out")},650);
+  setTimeout(()=>intro.remove(),1700);
+}
+function musicEntry(){
+  bgm.volume=0;
+  bgm.play().then(()=>{
+    document.body.classList.add("musicOn");play.textContent="Ⅱ";
+    fade=setInterval(()=>{bgm.volume=Math.min(target,bgm.volume+.003);if(bgm.volume>=target)clearInterval(fade)},50);
+  }).catch(()=>{});
+  gate();
+}
+function quietEntry(){bgm.pause();gate()}
+document.getElementById("enter").onclick=musicEntry;
+document.getElementById("quiet").onclick=quietEntry;
+play.onclick=()=>{if(bgm.paused){bgm.play();document.body.classList.add("musicOn");play.textContent="Ⅱ"}else{bgm.pause();document.body.classList.remove("musicOn");play.textContent="▶"}};
+volume.oninput=()=>{target=+volume.value/100;bgm.volume=target;vt.textContent=volume.value+"%"};
+bgm.ontimeupdate=()=>prog.style.width=(bgm.duration?bgm.currentTime/bgm.duration*100:0)+"%";
+addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&document.body.classList.contains("lock"))musicEntry()});
+const o=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add("on")),{threshold:.08});
+document.querySelectorAll(".reveal").forEach(x=>o.observe(x));
+</script></body></html>
